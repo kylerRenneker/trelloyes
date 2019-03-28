@@ -2,10 +2,12 @@ import React from 'react';
 import './Card.css';
 
 export default function Card(props) {
+  console.log(props.id)
   return (
     <div className='Card'>
       <button
         type='button'
+        onClick={() => props.onClickDelete(props.id)}
       >
         delete
       </button>
@@ -13,4 +15,8 @@ export default function Card(props) {
       <p>{props.content}</p>
     </div>
   )
+}
+
+Card.defaultProps = {
+  onClickDelete: () => {}
 }
